@@ -149,6 +149,52 @@
     }
   }
 
+  function initTerminalTyping() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    const output = document.getElementById("terminal-output");
+    if (!output) return;
+
+    const lines = [
+      "> bowen — front-end dev",
+      "> stack: html · css · js",
+      "> status: building...",
+      "> focus: ui/ux · a11y",
+    ];
+    let lineIndex = 0;
+    let charIndex = 0;
+    let currentText = "";
+
+    output.textContent = "";
+
+    function typeNext() {
+      if (lineIndex >= lines.length) {
+        lineIndex = 0;
+        charIndex = 0;
+        currentText = "";
+        output.textContent = "";
+      }
+
+      const line = lines[lineIndex];
+
+      if (charIndex < line.length) {
+        currentText += line.charAt(charIndex);
+        output.textContent = currentText;
+        charIndex += 1;
+        setTimeout(typeNext, 40 + Math.random() * 30);
+      } else {
+        lineIndex += 1;
+        charIndex = 0;
+        currentText = "";
+        setTimeout(typeNext, 1200);
+      }
+    }
+
+    setTimeout(typeNext, 800);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initTheme();
     if (themeToggle) {
@@ -158,5 +204,6 @@
     initSmoothScroll();
     initReveal();
     initYear();
+    initTerminalTyping();
   });
 })();

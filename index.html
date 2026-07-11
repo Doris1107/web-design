@@ -7,7 +7,13 @@
       name="description"
       content="個人作品集 — 前端開發與 UI 設計"
     />
-    <title>你的名字 | Portfolio</title>
+    <title>Bowen | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;1,400&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
@@ -18,7 +24,7 @@
 
     <header class="site-header">
       <div class="header-inner">
-        <a class="logo" href="#hero" aria-label="回到頁首">Portfolio</a>
+        <a class="logo" href="#hero" aria-label="回到頁首">Bowen.dev</a>
 
         <button
           type="button"
@@ -57,14 +63,15 @@
       <section id="hero" class="hero section">
         <div class="container hero-grid">
           <div class="hero-inner reveal">
-            <p class="badge">Front-end · UI/UX</p>
+            <p class="badge">Available for work</p>
             <h1 class="hero-title">
-              Bowen 用程式與設計，<br />
-              把想法變成可觸及的體驗。
+              <span class="hero-title-line">Yo, I'm Doris.</span>
+              <span class="hero-title-line">用程式與設計，</span>
+              <span class="hero-title-line">把想法變成可觸及的體驗。</span>
             </h1>
             <p class="hero-slogan">
-              專注語意化 HTML、可維護 CSS 與穩健 JavaScript，
-              在細節裡打磨質感，讓介面既好看也好用。
+              前端開發與 UI/UX 設計 — 專注語意化 HTML、可維護 CSS
+              與穩健 JavaScript，在細節裡打磨質感。
             </p>
             <div class="hero-actions">
               <a class="btn btn--primary" href="#projects">查看作品</a>
@@ -72,8 +79,20 @@
             </div>
           </div>
           <div class="hero-visual reveal" aria-hidden="true">
-            <div class="hero-visual-ring"></div>
-            <div class="hero-visual-core"></div>
+            <div class="hero-terminal">
+              <div class="hero-terminal__bar">
+                <span class="hero-terminal__dot"></span>
+                <span class="hero-terminal__dot"></span>
+                <span class="hero-terminal__dot"></span>
+                <span class="hero-terminal__title">terminal</span>
+              </div>
+              <div class="hero-terminal__body">
+                <div class="hero-terminal__prompt">
+                  $ whoami<span class="typing-cursor"></span>
+                </div>
+                <div class="hero-terminal__output" id="terminal-output"></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -326,7 +345,7 @@
     <footer id="footer" class="site-footer">
       <div class="container footer-grid reveal">
         <div class="footer-brand">
-          <p class="footer-name">你的名字</p>
+          <p class="footer-name">Bowen</p>
           <a class="footer-email" href="mailto:hello@example.com"
             >hello@example.com</a
           >
@@ -371,7 +390,7 @@
       <div class="container footer-bottom">
         <p class="copyright">
           <small
-            >&copy; <span id="year"></span> 你的名字. 保留所有權利。</small
+            >&copy; <span id="year"></span> Bowen. 保留所有權利。</small
           >
         </p>
       </div>
